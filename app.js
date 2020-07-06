@@ -5,13 +5,10 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const port = 8080
 const indexRouter = require('./routes/index')
-const corsOptions = {
-  origin: 'http://localhost:3000'
-}
 
 const app = express()
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
